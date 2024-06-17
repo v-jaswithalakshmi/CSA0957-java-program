@@ -1,0 +1,54 @@
+import java.awt.*;
+
+// Interface declaration
+interface Calculator {
+    // Method declarations
+    void add(int a, int b);
+    void sub(int a, int b);
+    void mul(int a, int b);
+    void div(int a, int b);
+}
+
+// Implementing class
+class BasicCalculator implements Calculator {
+    // Implementation of add() method
+    public void add(int a, int b) {
+        int result = a + b;
+        System.out.println("Addition result: " + result);
+    }
+
+    // Implementation of sub() method
+    public void sub(int a, int b) {
+        int result = a - b;
+        System.out.println("Subtraction result: " + result);
+    }
+
+    // Implementation of mul() method
+    public void mul(int a, int b) {
+        int result = a * b;
+        System.out.println("Multiplication result: " + result);
+    }
+
+    // Implementation of div() method
+    public void div(int a, int b) {
+        if (b != 0) {
+            int result = a / b;
+            System.out.println("Division result: " + result);
+        } else {
+            System.out.println("Cannot divide by zero!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BasicCalculator calculator = new BasicCalculator();
+
+        // Using methods from the implementing class
+        calculator.add(5, 3);
+        calculator.sub(10, 4);
+        calculator.mul(6, 7);
+        calculator.div(20, 5);
+        calculator.div(10, 0); // Test division by zero
+    }
+}

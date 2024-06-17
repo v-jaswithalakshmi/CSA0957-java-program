@@ -1,0 +1,35 @@
+
+import javax.awt*;
+class Example {
+    int a;
+    int b;
+
+    // Default constructor
+    Example() {
+        this.a = 10;
+        this.b = 15;
+    }
+
+    // Parameterized constructor
+    Example(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    // Method to display values
+    void disp() {
+        System.out.println("a = " + a + ", b = " + b);
+    }
+
+    public static void main(String[] args) {
+        // Create object using default constructor
+        Example obj1 = new Example();
+        System.out.println("Calling disp() with default constructor:");
+        obj1.disp();
+
+        // Create object using parameterized constructor
+        Example obj2 = new Example(20, 25);
+        System.out.println("Calling disp() with parameterized constructor:");
+        obj2.disp();
+    }
+}

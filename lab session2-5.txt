@@ -1,0 +1,63 @@
+import java.awt.*;
+abstract class AbstractStatistics {
+    // Abstract methods
+    abstract int total(int[] numbers);
+    abstract double average(int[] numbers);
+
+    // Concrete methods
+    double mean(int[] numbers) {
+        int total = total(numbers);
+        double average = average(numbers);
+        return (double) total / numbers.length;
+    }
+
+    int mode(int[] numbers) {
+        // Code for calculating mode goes here
+        return 0; // Dummy return value
+    }
+
+    double median(int[] numbers) {
+        // Code for calculating median goes here
+        return 0.0; // Dummy return value
+    }
+}
+
+class ConcreteStatistics extends AbstractStatistics {
+    // Implementation of abstract methods
+    @Override
+    int total(int[] numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    @Override
+    double average(int[] numbers) {
+        int sum = total(numbers);
+        return (double) sum / numbers.length;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        ConcreteStatistics concreteStatistics = new ConcreteStatistics();
+
+        // Using abstract methods
+        int total = concreteStatistics.total(numbers);
+        double average = concreteStatistics.average(numbers);
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + average);
+
+        // Using concrete methods
+        double mean = concreteStatistics.mean(numbers);
+        int mode = concreteStatistics.mode(numbers);
+        double median = concreteStatistics.median(numbers);
+        System.out.println("Mean: " + mean);
+        System.out.println("Mode: " + mode);
+        System.out.println("Median: " + median);
+    }
+}

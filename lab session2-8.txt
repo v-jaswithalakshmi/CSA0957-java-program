@@ -1,0 +1,38 @@
+import java.awt.*;
+
+// Interface declaration
+interface Tree {
+    // Method declarations
+    void fruits(String fruit1, String fruit2);
+    void leaves(String leaf1, String leaf2, String leaf3);
+    void flowers(String flower1, String flower2, String flower3, String flower4);
+}
+
+// First class extending the interface
+class Branch1 implements Tree {
+    // Implementation of fruits() method
+    public void fruits(String fruit1, String fruit2) {
+        System.out.println("Fruits on Branch1: " + fruit1 + ", " + fruit2);
+    }
+
+    // Implementation of leaves() method
+    public void leaves(String leaf1, String leaf2, String leaf3) {
+        System.out.println("Leaves on Branch1: " + leaf1 + ", " + leaf2 + ", " + leaf3);
+    }
+
+    // Implementation of flowers() method
+    public void flowers(String flower1, String flower2, String flower3, String flower4) {
+        System.out.println("Flowers on Branch1: " + flower1 + ", " + flower2 + ", " + flower3 + ", " + flower4);
+    }
+}
+
+// Second class extending the interface
+class Branch2 implements Tree {
+    // Implementation of fruits() method
+    public void fruits(String fruit1, String fruit2) {
+        System.out.println("Fruits on Branch2: " + fruit1 + ", " + fruit2);
+    }
+
+    // Implementation of leaves() method
+    public void leaves(String leaf1, String leaf2, String leaf3) {
+        System.out.println("Leaves on

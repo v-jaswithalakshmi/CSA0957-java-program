@@ -1,0 +1,36 @@
+import java.awt.*;
+
+public class MethodOverloading {
+    // Overloading by increasing and decreasing the number of parameters
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Overloading by changing the data types of parameters
+    double sum(double a, double b) {
+        return a + b;
+    }
+
+    // Overloading by interchanging the parameters
+    int sum(int b, int a) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        MethodOverloading obj = new MethodOverloading();
+
+        // Testing method overloading by increasing and decreasing the number of parameters
+        System.out.println("Sum of 5 and 10 is: " + obj.sum(5, 10));
+        System.out.println("Sum of 5, 10, and 15 is: " + obj.sum(5, 10, 15));
+
+        // Testing method overloading by changing the data types of parameters
+        System.out.println("Sum of 3.5 and 2.5 is: " + obj.sum(3.5, 2.5));
+
+        // Testing method overloading by interchanging the parameters
+        System.out.println("Sum of 15 and 20 is: " + obj.sum(15, 20));
+    }
+}

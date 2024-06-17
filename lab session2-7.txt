@@ -1,0 +1,63 @@
+import java.awt.*;
+
+// First interface
+interface Sum {
+    // Method declaration
+    void sum(int[] numbers);
+}
+
+// Second interface
+interface Avg {
+    // Method declaration
+    void avg(int[] numbers);
+}
+
+// Third interface
+interface Percentage {
+    // Method declaration
+    void percentage(double obtainedMarks, double totalMarks);
+}
+
+// Implementing class
+class Calculation implements Sum, Avg, Percentage {
+    // Implementation of sum() method
+    public void sum(int[] numbers) {
+        int total = 0;
+        for (int num : numbers) {
+            total += num;
+        }
+        System.out.println("Sum: " + total);
+    }
+
+    // Implementation of avg() method
+    public void avg(int[] numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        double average = (double) sum / numbers.length;
+        System.out.println("Average: " + average);
+    }
+
+    // Implementation of percentage() method
+    public void percentage(double obtainedMarks, double totalMarks) {
+        double percentage = (obtainedMarks / totalMarks) * 100;
+        System.out.println("Percentage: " + percentage + "%");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculation calculation = new Calculation();
+
+        // Sample data
+        int[] numbers = {10, 20, 30, 40, 50};
+        double obtainedMarks = 450;
+        double totalMarks = 500;
+
+        // Using methods from the implementing class
+        calculation.sum(numbers);
+        calculation.avg(numbers);
+        calculation.percentage(obtainedMarks, totalMarks);
+    }
+}
